@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tao of Eating — A Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f5eedc;
+    --warm: #c9a84c;
+    --terracotta: #8b4513;
+    --sage: #5a6e4a;
+    --cream: #faf6ec;
+    --fade: #e8dfc4;
+    --muted: #7a6a50;
+    --divider: #c9a84c44;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    background-image: 
+      radial-gradient(ellipse at 20% 20%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(90,110,74,0.07) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  .cover {
+    background: linear-gradient(160deg, #1a1208 0%, #2d1f0a 50%, #1a1208 100%);
+    color: var(--parchment);
+    text-align: center;
+    padding: 100px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cover-border {
+    border: 1px solid rgba(201,168,76,0.4);
+    border-top: 3px solid var(--warm);
+    border-bottom: 3px solid var(--warm);
+    padding: 40px 20px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+
+  .cover h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--parchment);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+
+  .cover h1 em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 300;
+    display: block;
+    color: var(--warm);
+    margin-top: 4px;
+  }
+
+  .cover-subtitle {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(245,238,220,0.65);
+    margin-top: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .cover-ornament {
+    color: var(--warm);
+    font-size: 22px;
+    margin: 20px 0;
+    opacity: 0.6;
+    letter-spacing: 0.3em;
+  }
+
+  .cover-source {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    color: rgba(201,168,76,0.55);
+    margin-top: 32px;
+    text-transform: uppercase;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .intro-block {
+    background: var(--cream);
+    border-left: 3px solid var(--warm);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.85;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .intro-block cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-family: 'Cinzel', serif;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    color: var(--warm);
+  }
+
+  .section {
+    margin-bottom: 64px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--warm);
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--warm) 0%, transparent 100%);
+    opacity: 0.4;
+  }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 19px;
+    font-weight: normal;
+    color: var(--terracotta);
+    margin: 28px 0 12px;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .law {
+    background: linear-gradient(135deg, #fff9ee 0%, #f5eedc 100%);
+    border: 1px solid var(--divider);
+    border-top: 2px solid var(--warm);
+    padding: 20px 24px;
+    margin: 12px 0;
+    border-radius: 0 0 4px 4px;
+    position: relative;
+  }
+
+  .law-num {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--warm);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .law p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .law .note {
+    margin-top: 8px;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--muted);
+    font-weight: 300;
+    font-family: 'IM Fell English', serif;
+  }
+
+  .rule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .rule-card {
+    background: var(--cream);
+    padding: 20px 20px 16px;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .rule-card.danger {
+    border-left: 3px solid #8b1a1a;
+  }
+
+  .rule-card.safe {
+    border-left: 3px solid var(--sage);
+  }
+
+  .rule-card-label {
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .rule-card.danger .rule-card-label { color: #8b1a1a; }
+  .rule-card.safe .rule-card-label { color: var(--sage); }
+
+  .rule-card p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .food-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+
+  .food-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm);
+    border-bottom: 2px solid var(--warm);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .food-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .food-table tr:nth-child(even) td {
+    background: rgba(201,168,76,0.04);
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin: 2px 0;
+  }
+
+  .tag-avoid { background: #8b1a1a15; color: #8b1a1a; border: 1px solid #8b1a1a33; }
+  .tag-ok { background: #5a6e4a15; color: var(--sage); border: 1px solid #5a6e4a33; }
+
+  .combining-matrix {
+    margin: 28px 0;
+    overflow-x: auto;
+  }
+
+  .combining-matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .combining-matrix th, .combining-matrix td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid var(--divider);
+  }
+
+  .combining-matrix th {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--warm);
+    background: rgba(26,18,8,0.04);
+    font-weight: 400;
+  }
+
+  .cell-yes { background: #5a6e4a18; color: var(--sage); font-weight: 600; }
+  .cell-no { background: #8b1a1a10; color: #8b1a1a; font-weight: 600; }
+  .cell-mod { background: #c9a84c18; color: #6b5500; font-weight: 600; }
+  .cell-self { background: var(--fade); color: var(--muted); font-style: italic; }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid var(--warm);
+    margin: 28px 0 28px 10px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--warm);
+    border: 2px solid var(--parchment);
+    box-shadow: 0 0 0 1px var(--warm);
+  }
+
+  .timeline-time {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--warm);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item h4 {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p {
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .flavor-card {
+    text-align: center;
+    padding: 20px 10px 16px;
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    background: var(--cream);
+  }
+
+  .flavor-icon {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .flavor-name {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .flavor-desc {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.5;
+    font-family: 'IM Fell English', serif;
+  }
+
+  .fast-box {
+    background: linear-gradient(135deg, #1a1208 0%, #2d1f0a 100%);
+    color: var(--parchment);
+    padding: 36px 36px 32px;
+    border-radius: 4px;
+    margin: 28px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fast-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .fast-box h3 {
+    color: var(--warm);
+    margin-top: 0;
+    font-family: 'Cinzel', serif;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .fast-box p {
+    color: rgba(245,238,220,0.85);
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .fast-box ul {
+    padding-left: 20px;
+  }
+
+  .fast-box li {
+    font-size: 16px;
+    color: rgba(245,238,220,0.85);
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+
+  blockquote {
+    border-left: 2px solid var(--warm);
+    margin: 32px 0;
+    padding: 12px 28px;
+  }
+
+  blockquote p {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--warm);
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .divider {
+    text-align: center;
+    margin: 48px 0;
+    color: var(--warm);
+    letter-spacing: 0.5em;
+    font-size: 16px;
+    opacity: 0.5;
+  }
+
+  .summary-box {
+    background: var(--cream);
+    border: 2px solid var(--warm);
+    padding: 36px 36px 32px;
+    border-radius: 4px;
+    margin: 48px 0 0;
+  }
+
+  .summary-box h2 {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .summary-box ol {
+    padding-left: 24px;
+    counter-reset: none;
+  }
+
+  .summary-box li {
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .summary-box li strong {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-top: 1px solid var(--divider);
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 40px 20px 60px; }
+    .cover h1 { font-size: 28px; }
+    .cover h1 em { font-size: 34px; }
+    .rule-grid { grid-template-columns: 1fr; }
+    .flavor-grid { grid-template-columns: repeat(2, 1fr); }
+    .flavor-grid .flavor-card:last-child { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-border">
+    <div class="cover-eyebrow">A Complete Dietary Guide drawn entirely from</div>
+    <h1>The Tao of<em>Eating Well</em></h1>
+    <div class="cover-ornament">— ✦ —</div>
+    <div class="cover-subtitle">Based on the ancient principles of Taoist nutrition as taught<br>by Daniel P. Reid</div>
+    <div class="cover-source">Source: The Tao of Health, Sex, and Longevity · Daniel Reid</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="container">
+
+  <!-- OPENING QUOTE -->
+  <div class="intro-block">
+    "Food and drink are relied upon to nurture life. But if one does not know that the natures of substances may be opposed to each other, and one consumes them altogether indiscriminately, the vital organs will be thrown out of harmony and disastrous consequences will soon arise."
+    <cite>— Chia Ming, Essential Knowledge for Eating and Drinking, 1368 · as quoted in Chapter 1</cite>
+  </div>
+
+  <!-- SECTION 1: FOUNDATIONAL LAWS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part I</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>The Foundational Laws of Taoist Eating</h2>
+    <p>Reid is clear from the outset: the overriding principle is <em>balance and harmony</em>. The Four Energies and Five Flavours in food must be harmonised to keep the vital organs in accord. These are not suggestions — they are Reid's non-negotiables.</p>
+
+    <div class="law">
+      <span class="law-num">Law I</span>
+      <p>Eat sparingly, and you will live a long and healthy life. The basic Taoist measure: eat until you are 70–80% full.</p>
+      <div class="note">Reid writes: "Mother Nature invariably punishes gluttons with all sorts of misery. The human body simply cannot utilize the enormous quantities and complex combinations of food with which civilized, sedentary man tends to gorge himself daily."</div>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Law II</span>
+      <p>Chew food thoroughly before swallowing — especially carbohydrates, which require the alkaline enzyme ptyalin in saliva to begin digestion.</p>
+      <div class="note">Reid cites Gandhi's dictum: "Drink your food and chew your beverages" — meaning solid food must be chewed to liquid form before swallowing.</div>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Law III</span>
+      <p>Avoid extreme hot and cold temperatures in foods and beverages.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Law IV</span>
+      <p>Do not drink large quantities of liquid with meals. Doing so dilutes the gastric medium and impairs digestion.</p>
+      <div class="note">Exception: wine and beer, being fermented, actually assist digestion when taken in moderate quantities with food.</div>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Law V</span>
+      <p>Select foods that are fresh rather than stale, living rather than dead, and consume them either raw or lightly cooked wherever possible.</p>
+      <div class="note">Reid quotes Dr McCollum of Johns Hopkins: "Eat nothing unless it will spoil or rot, but eat it before it does." Refined white flour, for example, will not spoil — this is precisely the problem.</div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 2: FOOD COMBINING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part II</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>The Science of Food Combining</h2>
+    <p>Reid devotes significant attention to this — and it is perhaps the most immediately actionable section of the dietary chapter. The argument is enzymatic: <em>incompatible food combinations send conflicting signals to the digestive system, causing enzymes to impair or neutralize one another.</em></p>
+
+    <blockquote>
+      <p>"All enzymes are specific in their actions, fitting the biochemical reactions for which they are designed as precisely as a key fits a lock. When incompatible enzymes are secreted together, owing to conflicting signals sent by incompatible food combinations, their actions are impaired or neutralized."</p>
+      <cite>— Daniel Reid, Chapter 1</cite>
+    </blockquote>
+
+    <h3>The Master Rules of Combining</h3>
+
+    <div class="law">
+      <span class="law-num">Rule 1 — The Central Rule</span>
+      <p>Never combine concentrated proteins (meat, fish, eggs, cheese) with concentrated starches (bread, potatoes, rice) at the same meal.</p>
+      <div class="note">Reid calls this "the worst possible combination of foods to mix together." Protein digestion requires an acid medium; starch digestion requires an alkaline one. They cancel each other out — causing fermentation, putrefaction, and bloating.</div>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 2</span>
+      <p>Never consume sugars and proteins at the same meal.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 3</span>
+      <p>Never consume meat and milk at the same meal.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 4</span>
+      <p>Avoid sweet or starchy desserts after large protein or carbohydrate meals.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 5</span>
+      <p>Eat fruit alone and on an empty stomach — never after a large meal.</p>
+      <div class="note">Fruit digests rapidly. If trapped behind slower-digesting food, it ferments in the gut, causing gas and toxicity rather than nutrition.</div>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 6</span>
+      <p>Separate your protein-based meal and your starch-based meal by at least 10–12 hours.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 7</span>
+      <p>Fats may be combined with carbohydrates, vegetables, and fruits — but should be avoided with concentrated proteins. With light proteins, fat is relatively compatible.</p>
+    </div>
+
+    <div class="law">
+      <span class="law-num">Rule 8</span>
+      <p>Vegetables combine well with either proteins or starches. They are the great neutrals of the Taoist plate.</p>
+    </div>
+
+    <h3>Combining at a Glance</h3>
+    <div class="combining-matrix">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Protein</th>
+            <th>Starch</th>
+            <th>Vegetables</th>
+            <th>Fruit</th>
+            <th>Fat</th>
+            <th>Sugar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Protein</th>
+            <td class="cell-self">—</td>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-mod">~ Light only</td>
+            <td class="cell-no">✗ No</td>
+          </tr>
+          <tr>
+            <th>Starch</th>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-self">—</td>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-no">✗ No</td>
+          </tr>
+          <tr>
+            <th>Vegetables</th>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-self">—</td>
+            <td class="cell-mod">~ Some</td>
+            <td class="cell-yes">✓ Yes</td>
+            <td class="cell-mod">~ Limit</td>
+          </tr>
+          <tr>
+            <th>Fruit</th>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-no">✗ No</td>
+            <td class="cell-mod">~ Some</td>
+            <td class="cell-self">—</td>
+            <td class="cell-mod">~ Some</td>
+            <td class="cell-no">✗ No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 3: FOODS TO EAT / AVOID -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part III</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>What to Eat — and What to Eliminate</h2>
+
+    <h3>Foods and Substances to Eliminate Entirely</h3>
+    <div class="rule-grid">
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate</span>
+        <p><strong>Refined white sugar</strong> — Reid calls it "the most hazardous dietary item of all," acidifying the bloodstream faster than anything else. Soft drinks are the extreme expression of this.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate</span>
+        <p><strong>Refined white flour and starch</strong> — Denatured of all nutritional value; rats fed on it die of starvation. It does not spoil — that alone tells you everything.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate</span>
+        <p><strong>Pasteurised and homogenised milk</strong> — Reid is explicit: eliminate it entirely from your diet. If raw certified milk is available, treat it as a whole food consumed alone.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate</span>
+        <p><strong>Hydrogenated oils and margarine</strong> — Avoid all margarines and butter substitutes; all hydrogenated oils are to be removed without exception.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate</span>
+        <p><strong>Processed, canned, and preserved food</strong> — Shelf life and human health are opposing forces. If it will not rot, it will not nourish.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Minimise Heavily</span>
+        <p><strong>Grains</strong> — Reid notes ancient Taoists consistently advocated <em>bi-gu</em> ("avoid grains"). Grains have been a human staple for only 6,000–7,000 years. Those who avoid them live longer and healthier, according to the Taoist literature.</p>
+      </div>
+    </div>
+
+    <h3>The Best Fats</h3>
+    <p>Reid is precise here. The best fats are <strong>butter</strong> and <strong>cold-pressed vegetable and nut oils in their fluid state</strong>. These include olive, soybean, sunflower, sesame, safflower, corn, and nut oils. Avoid all hydrogenated versions.</p>
+
+    <h3>Animal Protein — Wild and Natural Only</h3>
+    <p>Reid strongly favours wild fish from seas and rivers over farmed fish. He specifically recommends <strong>Japanese sashimi</strong> — raw fish — as arguably the most nutritionally potent, enzyme-rich, naturally digestible form of animal protein available.</p>
+    <p>For chicken: only <em>tu-ji</em> (earth chickens — those left to roam and forage freely) rather than <em>yang-ji</em> (factory-farmed birds). The same principle of wildness and natural diet applies across all animal protein sources.</p>
+    <p>When consuming cooked meats as the main element of a meal, Reid recommends supplementing with active <strong>proteolytic (protein-digesting) enzymes</strong> to prevent putrefaction, aid digestion, and speed elimination.</p>
+
+    <h3>The Five Flavours and Four Energies</h3>
+    <p>Reid explains that Taoists balance their diets according to the energetic and flavour properties of food — not merely nutrients. Each flavour affects the body in distinct ways:</p>
+
+    <div class="flavor-grid">
+      <div class="flavor-card">
+        <span class="flavor-icon">🌶️</span>
+        <span class="flavor-name">Pungent</span>
+        <div class="flavor-desc">Ginger, garlic, chili. Neutralise and disperse accumulated toxins.</div>
+      </div>
+      <div class="flavor-card">
+        <span class="flavor-icon">🌽</span>
+        <span class="flavor-name">Sweet</span>
+        <div class="flavor-desc">Corn, peas, dates. Nourish vital energy, harmonise the stomach.</div>
+      </div>
+      <div class="flavor-card">
+        <span class="flavor-icon">🍋</span>
+        <span class="flavor-name">Sour</span>
+        <div class="flavor-desc">Olives, pomegranate. Astringent; stop diarrhoea; solidify digestive contents.</div>
+      </div>
+      <div class="flavor-card">
+        <span class="flavor-icon">🌿</span>
+        <span class="flavor-name">Bitter</span>
+        <div class="flavor-desc">Rhubarb, bitter melon. Dry excess dampness, balance the system, purge bowels.</div>
+      </div>
+      <div class="flavor-card">
+        <span class="flavor-icon">🌊</span>
+        <span class="flavor-name">Salty</span>
+        <div class="flavor-desc">Kelp. Soften and moisten tissues; facilitate bowel movements.</div>
+      </div>
+    </div>
+
+    <p>The Four Energies — hot, warm, cool, cold — define the energetic intensity of food when digested. <strong>Yang foods</strong> (beef, mutton, chicken, alcohol, mango, chillies) generate warmth. Taoists balance these against cooler, yin foods and strictly avoid combinations that conflict energetically.</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 4: DAILY RHYTHM -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part IV</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>A Daily Rhythm — How to Structure Your Eating</h2>
+    <p>Reid does not prescribe a rigid meal plan, but the principles allow us to construct an ideal daily structure. The protein-starch separation rule of 10–12 hours is the structural anchor.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">On Waking — Empty Stomach</div>
+        <h4>Fruit or Fresh Juice Only</h4>
+        <p>Fruit is best consumed alone, on a completely empty stomach, in the morning. It digests quickly and cleanly when unimpeded. Fresh juices (especially carrot juice — mentioned repeatedly by Reid) are deeply valued. Nothing else should accompany it.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">Mid-Morning / Midday</div>
+        <h4>The Starch Meal</h4>
+        <p>A meal centred on whole, unrefined carbohydrates — grains (if consumed at all, whole and naturally prepared), root vegetables, legumes — combined with abundant vegetables. No animal protein at this meal. Chew every mouthful thoroughly. Eat only to 70–80% satiety.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">Afternoon</div>
+        <h4>The Gap</h4>
+        <p>Allow 10–12 hours between the starch meal and any protein meal. This is Reid's hard rule. Snacking is not the Taoist way — each meal should be an intentional, properly combined event, not a continuous grazing process.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">Evening</div>
+        <h4>The Protein Meal</h4>
+        <p>A meal centred on quality animal protein — preferably wild fish (ideally raw as sashimi, or lightly cooked), free-range fowl, or eggs — combined generously with vegetables. No starch at this meal. Supplement cooked meat meals with proteolytic enzymes. A moderate amount of fermented wine or beer is acceptable and aids digestion.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">After Meals</div>
+        <h4>No Fruit, No Sweet Desserts</h4>
+        <p>Fruit eaten after a large meal ferments. Sweet desserts after protein or starch meals impair digestion. The meal ends with the savoury — fruit is for the morning, alone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 5: FASTING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part V</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>Fasting — The Taoist Reset</h2>
+    <p>Reid treats fasting not as a dietary option but as a fundamental practice of health maintenance — an ancient Oriental health ritual still practiced in enlightened circles in the East.</p>
+
+    <div class="fast-box">
+      <h3>The Weekly Mini-Fast</h3>
+      <p>Reid recommends a once-a-week mini-fast of 24–36 hours as a regular health practice. This is the minimum threshold for the body to begin genuine detoxification — it takes at least 24 hours before the body commences pouring toxins into the bloodstream for elimination.</p>
+      <ul>
+        <li>Fast for 24–36 hours, ideally weekly.</li>
+        <li>During the fast, the body must be allowed to complete its detox cycle — stopping too soon means toxins are re-circulated rather than eliminated.</li>
+        <li>Before any fast can begin working, you must abstain from food for at least 12 hours to drop blood sugar low enough for the body to switch from glucose to fat for fuel.</li>
+        <li>The 2–3 days of cathartic discomfort during a longer fast are essential and must be endured — this is when true elimination occurs.</li>
+      </ul>
+    </div>
+
+    <p>Reid is direct: fasting is not starvation. It is the body's ancient self-repair mechanism. Modern eating habits that prevent the body from ever entering a fasted state are, in his view, one of the primary causes of chronic disease.</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 6: WATER AND BEVERAGES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part VI</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>Water, Beverages, and What to Drink</h2>
+
+    <p>Reid's index references "pints daily" — suggesting generous daily water intake is foundational. The key rules around beverages are:</p>
+
+    <div class="rule-grid">
+      <div class="rule-card safe">
+        <span class="rule-card-label">Permitted with meals</span>
+        <p><strong>Fermented wine and beer</strong> in moderate quantities — these are enzymatically active and actually assist digestion when taken with food.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Avoid with meals</span>
+        <p><strong>Large quantities of any other beverage</strong> — water included — as this dilutes gastric juices and impairs digestion directly.</p>
+      </div>
+      <div class="rule-card danger">
+        <span class="rule-card-label">Eliminate entirely</span>
+        <p><strong>Soft drinks</strong> — Reid calls them "Acid Bombs." One serving delivers acid equivalent to 9 teaspoons of refined sugar, instantly destabilising blood chemistry.</p>
+      </div>
+      <div class="rule-card safe">
+        <span class="rule-card-label">Ideal morning drink</span>
+        <p><strong>Fresh carrot juice</strong> and other fresh vegetable or fruit juices consumed alone on an empty stomach — referenced repeatedly throughout the book.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- SECTION 7: METABOLISM -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">Part VII</span>
+      <div class="section-line"></div>
+    </div>
+    <h2>Know Your Metabolic Type</h2>
+    <p>Reid introduces an important nuance: not all people have the same metabolic profile, and the ideal diet differs accordingly.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Characteristics</th>
+          <th>Dietary Emphasis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fast Oxidiser</strong></td>
+          <td>Feels depleted without regular protein and fat; sugars and starches cause nervousness or energy crashes</td>
+          <td>Steady supply of protein and fat; restrict sugars and starches significantly</td>
+        </tr>
+        <tr>
+          <td><strong>Slow Oxidiser</strong></td>
+          <td>Thrives on carbohydrates; heavy animal protein leaves them feeling sluggish</td>
+          <td>Emphasise vegetables, fruits, and whole starches; lighter protein</td>
+        </tr>
+        <tr>
+          <td><strong>Balanced Metaboliser</strong></td>
+          <td>The majority — neither extreme applies; neither protein nor starch alone causes dysfunction</td>
+          <td>Select wholesome foods from both categories and combine them correctly — the food combining rules are the primary concern</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Reid notes that most people in the West have balanced metabolisms — but that civilisation has obscured this through chronic exposure to refined and improperly combined food. Regardless of type, food combining rules apply universally.</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- MASTER SUMMARY -->
+  <div class="summary-box">
+    <h2>The Complete Taoist Eating Protocol — At a Glance</h2>
+    <ol>
+      <li>
+        <strong>Quantity</strong>
+        Eat only to 70–80% fullness at every meal, without exception. Overeating is the root of misery.
+      </li>
+      <li>
+        <strong>Chewing</strong>
+        Chew every mouthful until liquid — especially carbohydrates. This is where carbohydrate digestion begins.
+      </li>
+      <li>
+        <strong>Freshness</strong>
+        Eat only living food. If it will not rot, do not eat it.
+      </li>
+      <li>
+        <strong>Food Combining Rule 1</strong>
+        Never protein and starch at the same meal. Separate them by 10–12 hours minimum.
+      </li>
+      <li>
+        <strong>Food Combining Rule 2</strong>
+        Never protein and sugar together. Never meat and milk together.
+      </li>
+      <li>
+        <strong>Fruit</strong>
+        Always alone, always on an empty stomach, always in the morning. Never after a meal.
+      </li>
+      <li>
+        <strong>Fasting</strong>
+        Fast for 24–36 hours once a week. It is not optional — it is the body's reset mechanism.
+      </li>
+      <li>
+        <strong>Beverages</strong>
+        Drink minimally during meals. No soft drinks. Fermented wine or beer in moderation is compatible with food.
+      </li>
+      <li>
+        <strong>Animal Protein</strong>
+        Wild only. Raw fish (sashimi) is the pinnacle. Free-range, naturally fed poultry. Supplement cooked meat with proteolytic enzymes.
+      </li>
+      <li>
+        <strong>Eliminate</strong>
+        Refined sugar. Refined white flour. Pasteurised milk. Hydrogenated oils. Processed and preserved food. Soft drinks.
+      </li>
+      <li>
+        <strong>Fats</strong>
+        Butter and cold-pressed liquid oils only. No margarines. No hydrogenated anything.
+      </li>
+      <li>
+        <strong>Flavour Balance</strong>
+        Consciously include the Five Flavours — pungent (garlic, ginger), sweet, sour, bitter, salty — in balanced proportion across your diet.
+      </li>
+    </ol>
+  </div>
+
+  <blockquote style="margin-top:48px;">
+    <p>"Men of high antiquity knew Tao and patterned their lives on the harmony of Yin and Yang... They observed moderation in food and drink, regularity in their daily lives, and they did not recklessly over-strain themselves. Consequently, they lived long lives."</p>
+    <cite>— The Yellow Emperor's Classic of Internal Medicine, as cited by Daniel Reid</cite>
+  </blockquote>
+
+</div>
+
+<div class="footer">
+  All content drawn exclusively from The Tao of Health, Sex, and Longevity by Daniel P. Reid · Simon &amp; Schuster, 1989
+</div>
+
+</body>
+</html>
